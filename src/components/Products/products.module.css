@@ -1,0 +1,77 @@
+.contProd {
+  min-height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  place-items: center;
+  padding: 0;
+
+  list-style: none;
+  gap: 40px;
+}
+
+.cardProd {
+  box-sizing: border-box;
+  display: block;
+  width: 330px;
+  /* height: 450px; */
+  /* margin: 20px; */
+  padding: 20px 15px;
+  /* background-color: #ffe; */
+  /* color: #002; */
+
+  border: 2px solid #dde;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  user-select: none;
+
+  &:hover {
+    box-shadow: 0 2px 0 2px #dde;
+    transform: translateY(-5px);
+    background-color: #2b2b30;
+  }
+
+  & h3 {
+    height: 25px;
+    overflow: hidden;
+    font-size: 1.4rem;
+  }
+
+  & h2 {
+    text-align: end;
+    color: #fff;
+    font-size: 1.8rem;
+  }
+
+  & p {
+    height: 56px;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  & img {
+    width: 100%;
+    min-height: 250px;
+    height: 250px;
+    object-fit: fill;
+    border-radius: 10px;
+  }
+}
+
+.iconBuy {
+  width: 100px;
+  margin: auto;
+  /* margin: 0 0 0 auto; */
+  display: flex;
+  justify-content: center;
+
+  border: 2px solid #dde;
+  border-radius: 5px;
+  padding: 10px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #3e3e45;
+  }
+}

@@ -1,0 +1,84 @@
+.contFilters {
+  width: 94%;
+  margin: 30px auto;
+
+  font-size: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem;
+
+  border: 2px solid #dde;
+  border-radius: 10px;
+  user-select: none;
+}
+
+.rangePrice {
+  /* width: 400px; */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & input {
+    width: 180px;
+  }
+
+  & span {
+    width: 50px;
+  }
+}
+
+.category {
+  min-width: 260px;
+  font-size: 18px;
+  background: transparent;
+  color: #dde;
+  padding: 10px;
+
+  border-radius: 7px;
+
+  & option {
+    color: #dde;
+    background-color: #202024;
+  }
+}
+
+.search {
+  display: flex;
+  border: 2px solid #dde;
+  border-radius: 7px;
+
+  & input {
+    width: 200px;
+    padding: 10px;
+    font-size: 17px;
+    color: #dde;
+    background: transparent;
+
+    border: none;
+    border-radius: 7px 0 0 7px;
+    outline: none;
+  }
+
+  & button {
+    padding: 10px;
+    background: transparent;
+
+    border: none;
+    border-radius: 0 7px 7px 0;
+  }
+}
+
+select::-webkit-scrollbar {
+  width: 5px;
+}
+
+select::-webkit-scrollbar-track {
+  background-color: #202024;
+}
+
+select::-webkit-scrollbar-thumb {
+  background-color: #b0b0b1;
+  border-radius: 20px;
+}
