@@ -2,7 +2,7 @@
 
 View products, filters, pagination, shopping cart with this [API](https://dummyjson.com/)
 
-[Proyect](https://thss-app-cart.netlify.app/)
+[Visit Proyect](https://thss-app-cart.netlify.app/) 
 
 <br>
 
