@@ -2,6 +2,8 @@
 
 View products, filters, pagination, shopping cart with this [API](https://dummyjson.com/)
 
+[Proyect](https://thss-app-cart.netlify.app/)
+
 <br>
 
 [![My Skills](https://skillicons.dev/icons?i=ts,html,css,vite,react&theme=dark)](https://skillicons.dev)
