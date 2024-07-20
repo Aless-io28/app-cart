@@ -1,16 +1,16 @@
 import { IconCart, DeleteProduct } from "../Icons/Icons.tsx";
-import { useEffect, useId, useRef } from "react";
+import { useId, useRef } from "react";
 import styleCart from "./cart.module.css";
 import { useCart } from "../../hooks/useCart.tsx";
 import { ProductProps } from "../Interfaces/typeProducts.ts";
 import { ClearCart } from "../Icons/Icons";
-import { useLoadImgProduct } from "../../hooks/useLoadImg.ts";
+// import { useLoadImgProduct } from "../../hooks/useLoadImg.ts";
 
 export function Cart() {
   const cartProducts = useId();
   const inputCheckRef = useRef<HTMLInputElement>(null);
   const { cart, quantityProd, removeProduct, clearCart } = useCart();
-  const { urlsImages, serchImages } = useLoadImgProduct();
+  // const { urlsImages, serchImages } = useLoadImgProduct();
 
   // const handleClick = () => {
   //   if (!inputCheckRef.current?.checked) {

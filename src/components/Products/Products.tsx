@@ -6,7 +6,7 @@ import { useCart } from "../../hooks/useCart.tsx";
 import { ProductObject, ProductProps } from "../Interfaces/typeProducts.ts";
 
 export function Products({ products }: ProductObject) {
-  const { serchImages, urlsImages } = useLoadImgProduct();
+  const { serchImages } = useLoadImgProduct();
   const { addProduct, cart, removeProduct } = useCart();
 
   useEffect(() => {

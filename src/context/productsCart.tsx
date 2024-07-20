@@ -1,4 +1,4 @@
-import { createContext, useState, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { ProductProps } from "../components/Interfaces/typeProducts";
 
 export const ProductsCartContext = createContext<{
@@ -55,7 +55,7 @@ const reducerProduct = (
           ...state.slice(0, productInCartIndex),
           {
             ...state[productInCartIndex],
-            quantity: state[productInCartIndex].quantity + 1,
+            quantity: (state[productInCartIndex]?.quantity ?? 0) + 1,
           },
           ...state.slice(productInCartIndex + 1),
         ];
@@ -82,7 +82,8 @@ const reducerProduct = (
       const productInCartIndex = state.findIndex((item) => item.id === id);
       if (productInCartIndex >= 0) {
         const newState = structuredClone(state);
-        newState[productInCartIndex].quantity += 1;
+        const newQuantity = (newState[productInCartIndex]?.quantity ?? 0) + 1;
+        newState[productInCartIndex].quantity = newQuantity;
         updateLocalCart(newState);
         return newState;
       }
@@ -92,9 +93,13 @@ const reducerProduct = (
     case "QUANTITY_MINUS": {
       const { id } = actionPayload;
       const productInCartIndex = state.findIndex((item) => item.id === id);
-      if (productInCartIndex >= 0 && state[productInCartIndex].quantity > 1) {
+      if (
+        productInCartIndex >= 0 &&
+        (state[productInCartIndex].quantity ?? 0) > 1
+      ) {
         const newState = structuredClone(state);
-        newState[productInCartIndex].quantity -= 1;
+        const newQuantity = (newState[productInCartIndex]?.quantity ?? 0) - 1;
+        newState[productInCartIndex].quantity = newQuantity;
         updateLocalCart(newState);
         return newState;
       }
@@ -118,7 +123,23 @@ export function CartProvider({ children }: Props) {
   };
 
   const clearCart = () => {
-    dispatch({ type: "CLEAR_CART" });
+    dispatch({
+      type: "CLEAR_CART",
+      payload: {
+        id: 0,
+        quantity: 0,
+        title: "",
+        price: 0,
+        discountPercentage: 0,
+        rating: 0,
+        stock: 0,
+        brand: "",
+        category: "",
+        thumbnail: "",
+        images: [],
+        description: "",
+      },
+    });
   };
 
   const removeProduct = (product: ProductProps) => {
